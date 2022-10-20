@@ -218,10 +218,10 @@ async def open_category_for_create_position(call: CallbackQuery, state: FSMConte
         await call.message.delete()
         await call.message.answer_photo(get_position[5],
                                         send_msg,
-                                        reply_markup=confirm_buy_items(position_id, delete_msg.from_id), parse_mode='HTML')
+                                        reply_markup=confirm_buy_items(remover, position_id, delete_msg.from_id, category_id), parse_mode='HTML')
     else:
         await call.message.edit_text(send_msg,
-                                     reply_markup=confirm_buy_items(position_id, delete_msg.from_id), parse_mode='HTML')
+                                     reply_markup=confirm_buy_items(remover, position_id, delete_msg.from_id, category_id), parse_mode='HTML')
 
 
 
